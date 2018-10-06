@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treehouse", "Treehouse\Treehouse.csproj", "{69FEEF5C-34B3-48C6-B218-BB5F8F84C904}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69FEEF5C-34B3-48C6-B218-BB5F8F84C904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FEEF5C-34B3-48C6-B218-BB5F8F84C904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FEEF5C-34B3-48C6-B218-BB5F8F84C904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FEEF5C-34B3-48C6-B218-BB5F8F84C904}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06B7D271-9369-4ED8-8357-220685260EEA}
+	EndGlobalSection
+EndGlobal
