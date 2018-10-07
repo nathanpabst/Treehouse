@@ -8,53 +8,51 @@ namespace Treehouse
         {
             //--------------FITNESS FROG APP----------------------
             double runningTotal = 0;
-            bool keepGoing = true;
             string msgOne = "Is that really all you've got? Just Saying...";
             string msgTwo = "Well done good and faithfull servant...";
             string msgThree = "You's a BAMF!!!";
 
-            while (keepGoing)
+            while (true)
             {
                 Console.Write("Enter the number of minutes you exercise or type 'quit' to exit: ");
-                string userInput = Console.ReadLine();
+                var userInput = Console.ReadLine();
                 if (userInput.ToLower() == "quit")
                 {
-                    keepGoing = false;
+                    break;
                 }
-                else
+
+                try
                 {
-                    try
-                    {
-                        double minutes = double.Parse(userInput);
-                        if (minutes <= 0)
-                        {
-                            Console.WriteLine("That is not a valid entry.");
-                            continue;
-                        }
-                        else if (minutes <= 30)
-                        {
-                            Console.WriteLine(msgOne);
-                        }
-                        else if (minutes < 60)
-                        {
-                            Console.WriteLine(msgTwo);
-                        }
-                        else
-                        {
-                            Console.WriteLine(msgThree);
-                        }
-                    runningTotal = runningTotal + minutes;
-                    }
-                    catch (FormatException)
+                    var minutes = double.Parse(userInput);
+                    if (minutes <= 0)
                     {
                         Console.WriteLine("That is not a valid entry.");
                         continue;
                     }
-
-                    Console.WriteLine($"Ok, that makes {runningTotal} total minutes.");
-                    Console.WriteLine("");
-
+                    else if (minutes <= 30)
+                    {
+                        Console.WriteLine(msgOne);
+                    }
+                    else if (minutes < 60)
+                    {
+                        Console.WriteLine(msgTwo);
+                    }
+                    else
+                    {
+                        Console.WriteLine(msgThree);
+                    }
+                    runningTotal += minutes;
                 }
+                catch (FormatException)
+                {
+                    Console.WriteLine("That is not a valid entry.");
+                    continue;
+                }
+
+                Console.WriteLine($"Ok, that makes {runningTotal} total minutes.");
+                Console.WriteLine("");
+
+
             }
             Console.WriteLine("K, bye");
 
