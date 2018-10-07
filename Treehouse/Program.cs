@@ -13,37 +13,42 @@ namespace Treehouse
 
             while (true)
             {
-                //TODO Update the text "Enter a number: " to "Enter a number between 1 and 1000: ".
-                Console.Write("Enter a number between 1 and 1000: ");
+                //TODO Update the text "Enter a number: " to "Enter a number between 1 and 1000: ".--complete
+                Console.Write("Enter a number between 1 and 1000 or type 'quit' to exit: ");
                 string userInput = Console.ReadLine();
 
-                //TODO Force the user's provided value for the variable to lowercase so the user can type the text "quit" in any of the possible formats
+                //TODO Force the user's provided value for the variable to lowercase so the user can type the text "quit" in any of the possible formats--complete
                 if (userInput.ToLower() == "quit")
                 {
-                    //keepGoing = false;
+                    //keepGoing = false;--this line is no longer needed
                     break;
                 }
-                //else
+                //else--this line is no longer needed.
 
-                //TODO Add a try/catch statement to catch FormatException exceptions. Handle exceptions by displaying "userInput + is not a number!"
+                //TODO Add a try/catch statement to catch FormatException exceptions. Handle exceptions by displaying "userInput + is not a number!"--complete
                 try
                 {
-
-
-                    //TODO Allow the user to enter a fractional value
+                    //TODO Allow the user to enter a fractional value--changed int to var and int.Parse to double.Parse..--complete
                     var number = double.Parse(userInput);
 
-                    //TODO If user enters a value <= 0 display "Please enter a number greater than 0"
-
-                    //TODO If user enters a value > 1000 display "Please enter a number <= 1000"
-
+                    //TODO If user enters a value <= 0 display "Please enter a number greater than 0"--complete
+                    if (number <= 0)
+                    {
+                        Console.WriteLine("Please enter a number greater than 0.");
+                        continue;
+                    }
+                    //TODO If user enters a value > 1000 display "Please enter a number <= 1000"--complete
+                    else if (number > 1000)
+                    {
+                        Console.WriteLine("Please enter a number less than or equal to 1000.");
+                        continue;
+                    }
                     var result = number * number;
                     Console.WriteLine($"{number} multiplied by itself is equals to {result}.");
-
                 }
-                catch
+                catch(FormatException)
                 {
-                    Console.WriteLine($"{userInput} is not a number!");
+                    Console.WriteLine($"{userInput} is not a number you effer. Follow the rules!");
                 }
             }
             Console.WriteLine("K, bye");
