@@ -9,6 +9,9 @@ namespace Treehouse
             //--------------FITNESS FROG APP----------------------
             int runningTotal = 0;
             bool keepGoing = true;
+            string msgOne = "Is that really all you've got? Just Saying...";
+            string msgTwo = "Well done good and faithfull servant...";
+            string msgThree = "You's a BAMF!!!";
 
             while (keepGoing)
             {
@@ -22,9 +25,22 @@ namespace Treehouse
                 else
                 {
                     int minutes = int.Parse(userInput);
+                    if (minutes <= 30)
+                    {
+                        Console.WriteLine(msgOne);
+                    }
+                    else if (minutes < 60)
+                    {
+                        Console.WriteLine(msgTwo);
+                    }
+                    else
+                    {
+                        Console.WriteLine(msgThree);
+                    }
+
                     runningTotal = runningTotal + minutes;
 
-                    Console.WriteLine($"That makes {runningTotal} total minutes. Awesome!");
+                    Console.WriteLine($"Ok, that makes {runningTotal} total minutes.");
                     Console.WriteLine("");
 
                 }
