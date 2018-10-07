@@ -25,6 +25,7 @@ namespace Treehouse
                 else
                 {
                     int minutes = int.Parse(userInput);
+                    
                     if (minutes <= 30)
                     {
                         Console.WriteLine(msgOne);
