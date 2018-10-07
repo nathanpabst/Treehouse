@@ -20,25 +20,37 @@ namespace Treehouse
                 if (userInput == "quit")
                 {
                     keepGoing = false;
-                    break;
+                    //break;
                 }
                 else
                 {
-                    int minutes = int.Parse(userInput);
-                    if (minutes <= 30)
+                    try
                     {
-                        Console.WriteLine(msgOne);
-                    }
-                    else if (minutes < 60)
-                    {
-                        Console.WriteLine(msgTwo);
-                    }
-                    else
-                    {
-                        Console.WriteLine(msgThree);
-                    }
-
+                        int minutes = int.Parse(userInput);
+                        if (minutes <= 0)
+                        {
+                            Console.WriteLine("That is not a valid entry.");
+                            continue;
+                        }
+                        else if (minutes <= 30)
+                        {
+                            Console.WriteLine(msgOne);
+                        }
+                        else if (minutes < 60)
+                        {
+                            Console.WriteLine(msgTwo);
+                        }
+                        else
+                        {
+                            Console.WriteLine(msgThree);
+                        }
                     runningTotal = runningTotal + minutes;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("That is not a valid entry.");
+                        continue;
+                    }
 
                     Console.WriteLine($"Ok, that makes {runningTotal} total minutes.");
                     Console.WriteLine("");
