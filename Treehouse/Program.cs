@@ -7,7 +7,7 @@ namespace Treehouse
         static void Main(string[] args)
         {
             //--------------FITNESS FROG APP----------------------
-            int runningTotal = 0;
+            double runningTotal = 0;
             bool keepGoing = true;
             string msgOne = "Is that really all you've got? Just Saying...";
             string msgTwo = "Well done good and faithfull servant...";
@@ -17,16 +17,15 @@ namespace Treehouse
             {
                 Console.Write("Enter the number of minutes you exercise or type 'quit' to exit: ");
                 string userInput = Console.ReadLine();
-                if (userInput == "quit")
+                if (userInput.ToLower() == "quit")
                 {
                     keepGoing = false;
-                    //break;
                 }
                 else
                 {
                     try
                     {
-                        int minutes = int.Parse(userInput);
+                        double minutes = double.Parse(userInput);
                         if (minutes <= 0)
                         {
                             Console.WriteLine("That is not a valid entry.");
