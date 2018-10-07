@@ -24,23 +24,27 @@ namespace Treehouse
                     break;
                 }
                 //else
+
                 //TODO Add a try/catch statement to catch FormatException exceptions. Handle exceptions by displaying "userInput + is not a number!"
                 try
                 {
 
 
                     //TODO Allow the user to enter a fractional value
-                    int number = int.Parse(userInput);
+                    var number = double.Parse(userInput);
 
                     //TODO If user enters a value <= 0 display "Please enter a number greater than 0"
 
                     //TODO If user enters a value > 1000 display "Please enter a number <= 1000"
 
-                    int result = number * number;
-                    //Console.WriteLine("number + " multiplied by itself is equals to " result + ".");
+                    var result = number * number;
+                    Console.WriteLine($"{number} multiplied by itself is equals to {result}.");
 
                 }
-                catch { }
+                catch
+                {
+                    Console.WriteLine($"{userInput} is not a number!");
+                }
             }
             Console.WriteLine("K, bye");
             Console.Read();
